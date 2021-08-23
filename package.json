@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "concurrently --handle-input  \"yarn:server\" \"yarn:client\"",
-    "server": "node server/main.js",
+    "server": "supervisor server/main.js",
     "client": "vite --host",
     "build": "tsc && vite build",
     "serve": "vite preview",
@@ -27,8 +27,10 @@
     "i18next": "^20.4.0",
     "i18next-browser-languagedetector": "^6.1.2",
     "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
     "koa-logger": "^3.2.1",
     "koa-router": "^10.1.1",
+    "nodemon": "^2.0.12",
     "perfect-scrollbar": "^1.5.2",
     "prettier": "^2.3.2",
     "qs": "^6.10.1",
@@ -42,6 +44,7 @@
     "redux": "^4.1.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
+    "supervisor": "^0.12.0",
     "variables": "^1.0.1",
     "vite": "^2.5.0"
   },
