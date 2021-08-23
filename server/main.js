@@ -6,7 +6,7 @@ const { resolve } = require('path');
 const fs = require('fs');
 const cors = require('@koa/cors')
 
-
+const port = 3333;
 const app = new Koa();
 app.use(cors());
 let prefix = '/api';
@@ -33,7 +33,7 @@ glob.sync(resolve('./api', "**/*.json")).forEach((item) => {
     });
     // 记录路由
     routerMap[apiJsonPath] = apiPath;
-    console.log(` ${apiJsonPath} -> http://127.0.0.1:3333${apiPath}`)
+    console.log(` ${apiJsonPath} -> http://127.0.0.1:${port}${apiPath}`)
 });
 
 fs.writeFile('./routerMap.json', JSON.stringify(routerMap, null, 4), err => {
@@ -46,4 +46,5 @@ app
     .use(router.routes())
     .use(router.allowedMethods());
 
-app.listen(3333);
+app.listen(port);
+console.log(`server listening on ${port}`)
