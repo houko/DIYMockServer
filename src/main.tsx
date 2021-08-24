@@ -1,14 +1,12 @@
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from '@/redux/store';
-
 import React, { Suspense } from 'react';
+import { Route } from 'react-router';
+import store from '@/redux/store';
 
 import MyNavLink from '@/components/CustomNavLink';
 import Loading from '@/components/Loading';
-import { Redirect, Switch } from 'react-router-dom';
-import { Route } from 'react-router';
 
 import '@/i18n';
 import Home from '@/views/Home';
@@ -26,7 +24,7 @@ ReactDOM.render(
 					</div>
 					<Suspense fallback={<Loading/>}>
 						<Switch>
-							<Route component={Home} path="/" exact/>
+							<Route component={Home} exact={true} path="/"/>
 							<Route component={Home} path="/home"/>
 							<Route component={Task} path="/task"/>
 							<Route component={NotFound} path="/404"/>

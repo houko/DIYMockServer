@@ -15,14 +15,12 @@ export default defineConfig({
 		port: 2222,
 		strictPort: true,
 		cors: true,
-		proxy:{
+		proxy: {
 			'/api': {
 				target: 'http://127.0.0.1:3333',
 				changeOrigin: true,
-				rewrite: (path) => path.replace(/^\/api/, '')
+				rewrite: (path) => path.replace(/^\/api/, ''),
 			},
-
-		}
+		},
 	},
-
 });

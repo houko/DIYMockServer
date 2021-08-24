@@ -1,6 +1,6 @@
 {
   "name": "diy-mock-server",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "concurrently --handle-input  \"yarn:server\" \"yarn:client\"",
     "server": "supervisor server/main.js",

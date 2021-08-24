@@ -14,21 +14,21 @@ const Task = (): JSX.Element => {
 			.post('/api/upload', data, {})
 			.then((data) => {
 				console.log(data.data);
-			}).catch(e => {
-			setMsg(e.data);
-			setOpen(true);
-		});
+			})
+			.catch((e) => {
+				setMsg(e.data);
+				setOpen(true);
+			});
 	};
 	return (
 		<div>
 			<input type="file" onChange={handleCapture}/>
 			<Snackbar
 				anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+				autoHideDuration={1000}
 				open={open}
-				autoHideDuration={1000}>
-				<Alert severity="success">
-					{msg}
-				</Alert>
+			>
+				<Alert severity="success">{msg}</Alert>
 			</Snackbar>
 		</div>
 	);

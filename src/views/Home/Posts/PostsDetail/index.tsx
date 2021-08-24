@@ -1,12 +1,12 @@
 import React from 'react';
 
 interface Props {
-    location: Location;
+	location: Location;
 }
 
 interface Location {
-    id: string;
-    title: string;
+	id: string;
+	title: string;
 }
 
 const PostsDetail = (props: Props): JSX.Element => {

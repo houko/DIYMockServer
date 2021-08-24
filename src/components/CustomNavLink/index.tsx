@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 
-const MyNavLink = (props: NavLinkProps):JSX.Element => {
+const MyNavLink = (props: NavLinkProps): JSX.Element => {
 	// {children}
 	// 相当于
 	// <NavLink children={this.props.children} />
