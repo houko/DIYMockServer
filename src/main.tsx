@@ -3,18 +3,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '@/redux/store';
 
-import React, { lazy, Suspense } from 'react';
+import React, { Suspense } from 'react';
 
 import MyNavLink from '@/components/CustomNavLink';
 import Loading from '@/components/Loading';
 import { Redirect, Switch } from 'react-router-dom';
 import { Route } from 'react-router';
 
-const Home = lazy(() => import('@/views/Home'));
-const Task = lazy(() => import('@/views/Task'));
-const NotFound = lazy(() => import('@/views/NotFound'));
-
 import '@/i18n';
+import Home from '@/views/Home';
+import Task from '@/views/Task';
+import NotFound from '@/views/NotFound';
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -27,7 +26,7 @@ ReactDOM.render(
 					</div>
 					<Suspense fallback={<Loading/>}>
 						<Switch>
-							<Route component={Home} path="/"/>
+							<Route component={Home} path="/" exact/>
 							<Route component={Home} path="/home"/>
 							<Route component={Task} path="/task"/>
 							<Route component={NotFound} path="/404"/>
