@@ -7,7 +7,7 @@ import MyNavLink from '@/components/CustomNavLink';
 const Home = (): JSX.Element => (
 	<>
 		Home
-		<div>
+		<div className="flex">
 			<MyNavLink to="/home/news">news</MyNavLink>
 			<MyNavLink to="/home/posts">posts</MyNavLink>
 		</div>

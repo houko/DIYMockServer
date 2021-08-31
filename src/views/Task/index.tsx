@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'redaxios';
-import { Snackbar } from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
 
 const Task = (): JSX.Element => {
-	const [open, setOpen] = useState(false);
 	const [msg, setMsg] = useState('');
 
 	const handleCapture = ({target}) => {
@@ -17,19 +14,14 @@ const Task = (): JSX.Element => {
 			})
 			.catch((e) => {
 				setMsg(e.data);
-				setOpen(true);
 			});
 	};
 	return (
 		<div>
 			<input type="file" onChange={handleCapture}/>
-			<Snackbar
-				anchorOrigin={{vertical: 'top', horizontal: 'right'}}
-				autoHideDuration={1000}
-				open={open}
-			>
-				<Alert severity="success">{msg}</Alert>
-			</Snackbar>
+			<div>
+				<h2>{msg}</h2>
+			</div>
 		</div>
 	);
 };
