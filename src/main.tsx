@@ -22,13 +22,13 @@ ReactDOM.render(
 						<MyNavLink to="/home">home</MyNavLink>
 						<MyNavLink to="/task">task</MyNavLink>
 					</div>
-					<Suspense fallback={<Loading/>}>
+					<Suspense fallback={<Loading />}>
 						<Switch>
-							<Route component={Home} exact={true} path="/"/>
-							<Route component={Home} path="/home"/>
-							<Route component={Task} path="/task"/>
-							<Route component={NotFound} path="/404"/>
-							<Redirect to="/404"/>
+							<Route component={Home} exact={true} path="/" />
+							<Route component={Home} path="/home" />
+							<Route component={Task} path="/task" />
+							<Route component={NotFound} path="/404" />
+							<Redirect to="/404" />
 						</Switch>
 					</Suspense>
 				</div>
